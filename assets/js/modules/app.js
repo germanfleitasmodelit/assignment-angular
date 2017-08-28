@@ -6,7 +6,22 @@
         $routeProvider.when('/', {
             templateUrl: 'assets/templates/pages/home.html',
             controller: 'HomeController'
-        });
+        })
+
+        /* .when('/create', {
+            templateUrl: 'assets/templates/pages/create-contact.html',
+            controller: 'ContactController',
+            controllerAs: 'contactCtrl'
+        })
+
+        .when('/edit', {
+            templateUrl: 'assets/templates/pages/edit-contact.html',
+            controller: 'ContactController',
+            controllerAs: 'contactCtrl'
+        })
+        
+        .otherwise({ redirectTo: '/' }) */
+        ;
 
     }]);
 
