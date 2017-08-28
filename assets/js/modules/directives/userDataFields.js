@@ -6,6 +6,7 @@ angular.module('Directives')
             restrict: 'E',
             replace: false,
             templateUrl: 'assets/templates/user-data-fields.html',
+            //controller: 'ContactController',
             link: function(scope, element, attrs) {
 
             }

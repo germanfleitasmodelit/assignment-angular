@@ -1,5 +1,5 @@
 angular.module('Controllers')
-    .controller('HomeController', ['$scope',function ($scope, Helper) {
+    .controller('LoginController', ['$scope',function ($scope, Helper) {
 
 		$scope.model = {};
     }]);

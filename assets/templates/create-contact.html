@@ -1,8 +1,10 @@
 <h2>Create contact</h2>
-<form>
+<form   name="createContactForm" 
+        ng-controller="ContactController" 
+        ng-model="contact" 
+        ng-submit="createContactForm.$valid && addContact(contact)"
+        novalidate>
     <user-data-fields></user-data-fields>
     
-    <button type="button" id="create-button" data-loading-text="Creating..." class="btn btn-primary">
-        Create
-    </button>
+    <input type="submit" value="Create" id="createButton" class="btn btn-primary">
 </form>
