@@ -1,3 +1,24 @@
 <main>
-	<h1>{{4+8}}</h1>
+	<section ng-controller="MenuController as menu">
+		<ul class="nav nav-pills">
+			<li><a href="#" ng-click="menu.selectTab(1)" ng-class="{active: menu.isSelected(1)}">Home</a></li>
+			<li><a href="#" ng-click="menu.selectTab(2)" ng-class="{active: menu.isSelected(2)}">Create contact</a></li>
+			<li><a href="#" ng-click="menu.selectTab(3)" ng-class="{active: menu.isSelected(3)}">Edit contact</a></li>
+		</ul>
+	
+		<!-- show contacts -->
+		<div class="panel" ng-show="menu.isSelected(1)">
+
+		</div>
+
+		<!-- create contacts -->
+		<div class="panel" ng-show="menu.isSelected(2)">
+			<create-contact></create-contact>
+		</div>
+
+		<!-- edit contacts -->
+		<div class="panel" ng-show="menu.isSelected(3)">
+			<edit-contact></edit-contact>
+		</div>
+	</section>
 </main>
