@@ -5,4 +5,5 @@ angular.module('Directives', []);
 require('./directives/userDataFields.js');
 require('./directives/createContact.js');
 require('./directives/editContact.js');
+require('./directives/contactList.js');
 require('./directives/login.js');

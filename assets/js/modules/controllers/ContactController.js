@@ -1,15 +1,57 @@
 angular.module('Controllers')
     .controller('ContactController', ['$scope',function ($scope, Helper) {
+		var namespace = 'gerdev.ContactControllerExtension.';
+		var functionListUsers = namespace + 'listUsers';
+		var functionCreateContact = namespace + 'createContact';
+
+		$scope.contacts = [];
 		$scope.contact = {};
+		$scope.cosa = 1;
+
+		Visualforce.remoting.Manager.invokeAction(
+			functionListUsers,
+			JSON.parse(sessionStorage.getItem('loggedUser')).Username,
+			JSON.parse(sessionStorage.getItem('loggedUser')).AuthToken,
+			function(result, event) {
+				$scope.$apply(function() {
+					$scope.contacts = result;
+			});
+		});
+
 		$scope.addContact = function(contact){
 
 			Visualforce.remoting.Manager.invokeAction(
-				'gerdev.ContactControllerExtension.createContact',
-				'gfleitas', '5abd06d6f6ef0e022e11b8a41f57ebda', contact.firstName, contact.lastName,
+				functionCreateContact,
+				JSON.parse(sessionStorage.getItem('loggedUser')).Username,
+				JSON.parse(sessionStorage.getItem('loggedUser')).AuthToken,
+				contact.FirstName, contact.LastName,
 				function(result, event) {
 					$scope.$apply(function() {
-					alert(result);
+						$scope.contact = {};
+						alert(result);
 				});
 			});
 		};
+
+		/* $scope.editContact = function(contact){
+			alert(contact.FirstName);
+			alert($scope.contact.FirstName);
+			alert($scope.cosa++);
+		}; */
+
+
+		/* $scope.setContact = function(c){
+			$scope.setContactFirstName(c.FirstName);
+			$scope.setContactLastName(c.LastName);
+		};
+		$scope.setContactFirstName = function(firstName){
+			$scope.contact.FirstName = firstName;
+			alert($scope.contact.FirstName);
+			
+		};
+
+		$scope.setContactLastName = function(lastName){
+			$scope.contact.LastName = lastName;
+			alert($scope.contact.LastName);
+		}; */
     }]);

@@ -1,0 +1,18 @@
+<div>
+    <form   name="loginContactForm" 
+            ng-controller="LoginController" 
+            ng-model="user" 
+            ng-submit="loginContactForm.$valid && loginUser(user)"
+            novalidate>
+        <div class="input-group">
+            <span class="input-group-addon" id="login-username">Username</span>
+            <input type="text" class="form-control" placeholder="juanperez89" required ng-model="user.Username">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="login-password">Password</span>
+            <input type="password" class="form-control" required ng-model="user.Password">
+        </div>
+        
+        <input type="submit" value="Login" id="loginButton" class="btn btn-primary">
+    </form>
+</div>

@@ -1,8 +1,33 @@
 <h2>Edit contact</h2>
-<form>
-    <user-data-fields></user-data-fields>
+
+<!-- <form   name="editContactForm" 
+        ng-controller="ContactController" 
+        ng-model="contact" 
+        ng-submit="editContactForm.$valid && editContact(contact)"
+        novalidate> -->
+    <!-- <user-data-fields></user-data-fields> -->
+    <!-- <input type="text" ng-model="contact.FirstName"/>
+    <input type="text" ng-model="contact.LastName"/>
+    <span>{{contact.LastName}}</span>
     
     <button type="button" id="edit-button" data-loading-text="Saving..." class="btn btn-primary">
         Save
     </button>
-</form>
+
+    <contact-list></contact-list>
+</form> -->
+
+<!-- <a ng-repeat="c in contacts" class="list-group-item">
+        <div ng-click="setContact(c)">{{c.LastName + ', '  + c.FirstName}}</div>
+</a> -->
+
+<!-- <form   name="editContactForm" 
+ng-repeat="c in contacts" 
+class="list-group-item"
+ng-model="contact" 
+ng-submit="editContactForm.$valid && editContact(contact)"
+novalidate>
+<user-data-fields></user-data-fields>
+
+<input type="submit" value="Save changes" id="editButton" class="btn btn-primary">
+</form> -->
