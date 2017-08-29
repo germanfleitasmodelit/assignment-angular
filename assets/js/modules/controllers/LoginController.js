@@ -4,6 +4,11 @@ angular.module('Controllers')
 		var functionValidateToken = 'gerdev.MainController.validateToken';
 		$scope.user = {};
 
+		$scope.logoutUser = function(){
+			sessionStorage.clear();
+			$location.path('/login');
+		};
+
 		$scope.loginUser = function(user){
 			Visualforce.remoting.Manager.invokeAction(
 				functionUserLogin,
