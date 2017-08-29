@@ -1,6 +1,5 @@
 angular.module('Directives')
-
-	.directive('logoutButton', [function() {
+    .directive('logoutButton', [function() {
         return {
             restrict: 'E',
             replace: false,

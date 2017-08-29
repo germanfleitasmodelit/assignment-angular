@@ -1,10 +1,9 @@
 angular.module('Directives')
-    .directive('contactList', [function() {
+    .directive('contactEdit', [function() {
         return {
             restrict: 'E',
             replace: false,
-            templateUrl: 'assets/templates/contact-list.html',
-            controller: 'ContactListController',
+            templateUrl: 'assets/templates/contact-edit.html',
             link: function(scope, element, attrs) {
 
             }

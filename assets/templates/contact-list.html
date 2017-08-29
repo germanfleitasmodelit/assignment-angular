@@ -1,5 +1,5 @@
 <h2>Contacts</h2>
-<div ng-controller="ContactController" class="list-group">
+<div class="list-group">
     <a ng-repeat="c in contacts" class="list-group-item">
         <div ng-click="setContact(c)">{{c.LastName + ', '  + c.FirstName}}</div>
     </a>

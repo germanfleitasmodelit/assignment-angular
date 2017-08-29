@@ -1,10 +1,17 @@
 <h2>Create contact</h2>
-<form   name="createContactForm" 
-        ng-controller="ContactController" 
+<form   name="createContactForm"
         ng-model="contact" 
         ng-submit="createContactForm.$valid && addContact(contact)"
         novalidate>
-    <user-data-fields></user-data-fields>
+        
+    <div class="input-group">
+        <span class="input-group-addon" id="user-firstname">First Name</span>
+        <input type="text" class="form-control" placeholder="Juan" required ng-model="contact.FirstName">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="user-lastname">Last Name</span>
+        <input type="text" class="form-control" placeholder="Pérez" required ng-model="contact.LastName">
+    </div>
     
     <input type="submit" value="Create" id="createButton" class="btn btn-primary">
 </form>
