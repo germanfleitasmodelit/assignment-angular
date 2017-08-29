@@ -1,23 +1,14 @@
 angular.module('Directives')
-    .directive('contactList', [function() {
+    .directive('contactList', ['ContactService', function(ContactService) {
         return {
             restrict: 'E',
             replace: false,
             templateUrl: 'assets/templates/contact-list.html',
             controller: function ($scope) {
-                var functionListUsers = 'gerdev.ContactControllerExtension.listUsers';
                 $scope.contacts = [];
         
-                Visualforce.remoting.Manager.invokeAction(
-                    functionListUsers,
-                    JSON.parse(sessionStorage.getItem('loggedUser')).Username,
-                    JSON.parse(sessionStorage.getItem('loggedUser')).AuthToken,
-                    function(result, event) {
-                        $scope.$apply(function() {
-                            $scope.contacts = result;
-                    });
-                });
-        
+                ContactService.listUsers($scope);
+
                 $scope.selectContact = function(contact){
                     $scope.contact = contact;
                 };
