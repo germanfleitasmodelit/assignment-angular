@@ -33,16 +33,19 @@ angular.module('Controllers')
 			});
 		};
 
-		/* $scope.editContact = function(contact){
+		$scope.editContact = function(contact){
 			alert(contact.FirstName);
 			alert($scope.contact.FirstName);
 			alert($scope.cosa++);
-		}; */
+		};
 
 
-		/* $scope.setContact = function(c){
-			$scope.setContactFirstName(c.FirstName);
-			$scope.setContactLastName(c.LastName);
+		$scope.setContact = function(c){
+			$scope.contact = c;
+			alert($scope.contact.FirstName);
+
+			/* $scope.setContactFirstName(c.FirstName);
+			$scope.setContactLastName(c.LastName); */
 		};
 		$scope.setContactFirstName = function(firstName){
 			$scope.contact.FirstName = firstName;
@@ -53,5 +56,5 @@ angular.module('Controllers')
 		$scope.setContactLastName = function(lastName){
 			$scope.contact.LastName = lastName;
 			alert($scope.contact.LastName);
-		}; */
+		};
     }]);

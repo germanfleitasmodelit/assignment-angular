@@ -3,27 +3,26 @@
     
     App.config(['$routeProvider', function ($routeProvider) {
 
-        $routeProvider.when('/home', {
-            templateUrl: 'assets/templates/pages/home.html',
-            controller: 'HomeController'
-        })
-
+        $routeProvider
         .when('/login', {
             templateUrl: 'assets/templates/pages/login.html',
             controller: 'LoginController'
         })
 
-        /* .when('/create', {
-            templateUrl: 'assets/templates/pages/create-contact.html',
-            controller: 'ContactController',
-            controllerAs: 'contactCtrl'
+        .when('/home', {
+            templateUrl: 'assets/templates/pages/home.html',
+            controller: 'HomeController'
         })
 
-        .when('/edit', {
-            templateUrl: 'assets/templates/pages/edit-contact.html',
-            controller: 'ContactController',
-            controllerAs: 'contactCtrl'
-        })*/
+        .when('/contact/create', {
+            templateUrl: 'assets/templates/pages/contact-create.html',
+            controller: 'CreateController'
+        })
+
+        .when('/contact/edit', {
+            templateUrl: 'assets/templates/pages/contact-edit.html',
+            controller: 'EditController'
+        })
         
         .otherwise({ redirectTo: '/home' })
         ;
@@ -39,5 +38,5 @@
                 $location.path("/home");
               }
             });
-         })
+         });
 })();
