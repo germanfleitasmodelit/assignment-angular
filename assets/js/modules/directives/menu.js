@@ -4,7 +4,17 @@ angular.module('Directives')
             restrict: 'E',
             replace: false,
             templateUrl: 'assets/templates/menu.html',
-            controller: 'MenuController',
+            controller: function ($scope) {
+                $scope.tab = 1;
+        
+                $scope.selectTab = function(setTab){
+                    $scope.tab = setTab;
+                }
+        
+                $scope.isSelected = function(checkTab){
+                    return $scope.tab === checkTab;
+                }
+            },
             link: function(scope, element, attrs) {
 
             }

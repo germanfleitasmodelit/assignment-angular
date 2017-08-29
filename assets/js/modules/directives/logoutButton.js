@@ -4,6 +4,7 @@ angular.module('Directives')
             restrict: 'E',
             replace: false,
             templateUrl: 'assets/templates/logout-button.html',
+            controller: 'LoginController',
             link: function(scope, element, attrs) {
 
             }

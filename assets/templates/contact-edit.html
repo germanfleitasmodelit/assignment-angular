@@ -1,14 +1,20 @@
 <h2>Edit contact</h2>
+<form name="editContactForm"
+    ng-model="contact" 
+    ng-submit="editContactForm.$valid && editContact(contact)"
+    novalidate>
 
-<form   name="editContactForm" 
-        ng-controller="ContactController" 
-        ng-model="contact" 
-        ng-submit="editContactForm.$valid && editContact(contact)"
-        novalidate>
-    <user-data-fields></user-data-fields>
+    <div class="input-group">
+        <span class="input-group-addon" id="user-firstname">First Name</span>
+        <input type="text" class="form-control" placeholder="Juan" required ng-model="contact.FirstName" ng-value="contact.FirstName">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="user-lastname">Last Name</span>
+        <input type="text" class="form-control" placeholder="Pérez" required ng-model="contact.LastName" ng-value="contact.LastName">
+    </div>
     
     <input type="submit" value="Save changes" id="editButton" class="btn btn-primary">
     
     <hr>
-    <contact-list></contact-list>
+    
 </form>

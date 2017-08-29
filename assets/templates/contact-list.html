@@ -1,6 +1,6 @@
-<h2>Contacts</h2>
+<h2>Contact List</h2>
 <div class="list-group">
-    <a ng-repeat="c in contacts" class="list-group-item">
-        <div ng-click="setContact(c)">{{c.LastName + ', '  + c.FirstName}}</div>
+    <a ng-repeat="c in contacts" class="list-group-item" ng-click="selectContact(c)" ng-class="{active: isSelected(c)}">
+        {{c.LastName + ', '  + c.FirstName}}
     </a>
 </div>
